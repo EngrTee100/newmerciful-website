@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MERCIFUL CRUNCHY — Cart & Checkout</title>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/cart.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="../main/merciful.html">MERCIFUL CRUNCHY</a>
+      <nav class="nav">
+        <a href="../main/merciful.html">Shop</a>
+        <a href="../main/about.html">About Us</a>
+        <a href="../main/contact.html">Contact Us</a>
+        <a href="../main/cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-container">
+      <!-- Cart items inserted by script.js -->
+    </div>
+
+    <section id="checkout-section" class="checkout">
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <div class="grid-2">
+          <label>
+            Full name
+            <input type="text" id="cust-name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="cust-phone" required />
+          </label>
+        </div>
+        <label>
+          Delivery address
+          <input type="text" id="cust-address" required />
+        </label>
+        <label>
+          Email (optional)
+          <input type="email" id="cust-email" />
+        </label>
+
+        <div class="form-row" style="margin-top:12px">
+          <label>
+            <input type="radio" name="paymentMethod" value="cod" checked /> Pay on Delivery (Cash)
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="online" /> Pay Now (WhatsApp)
+          </label>
+        </div>
+
+        <div class="order-summary" id="order-summary" style="margin-top:12px"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary" id="place-cod">Place Order (Pay on Delivery)</button>
+          <button type="button" class="btn buy" id="pay-now">Pay Now</button>
+        </div>
+      </form>
+
+      <div id="order-result" class="muted" style="margin-top:12px"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY</p>
+    </div>
+  </footer>
+
+  <script src="../script/merciful.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* MERCIFUL CRUNCHY — About Page Styles */
+
+/* About Hero Section */
+.about-hero {
+  margin-top: 20px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--accent) 0%, #f59e0b 100%);
+  border-radius: var(--radius);
+  color: white;
+  text-align: center;
+}
+
+.about-hero h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.about-hero p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* About Content Grid */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+  align-items: center;
+}
+
+.about-text h2 {
+  color: #1f2937;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.about-text li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.about-text li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Info Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.info-card strong {
+  display: block;
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 28px;
+  background: linear-gradient(180deg, #fff, #fff6ed);
+  padding: 24px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.contact-section h2 {
+  color: #1f2937;
+  margin-top: 0;
+}
+
+.contact-section p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.contact-buttons a,
+.contact-buttons button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.contact-buttons .btn-primary {
+  background: var(--accent);
+  color: white;
+  margin: 0;
+}
+
+.contact-buttons .btn-primary:hover {
+  background: #b8600d;
+  transform: translateY(-2px);
+}
+
+.contact-buttons a[href*="wa.me"] {
+  background: #25d366;
+  color: white;
+}
+
+.contact-buttons a[href*="wa.me"]:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+}
+
+.contact-buttons a[href*="tel"] {
+  background: #007bff;
+  color: white;
+}
+
+.contact-buttons a[href*="tel"]:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 28px;
+}
+
+.team-section h2 {
+  color: #1f2937;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.team-member {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-member-info {
+  padding: 16px;
+}
+
+.team-member-info h3 {
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.team-member-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 24px;
+  }
+
+  .about-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-buttons a,
+  .contact-buttons button {
+    width: 100%;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,251 @@
+/* MERCIFUL CRUNCHY — Common/Shared Styles */
+
+:root {
+  --bg: #fff9f3;
+  --accent: #d97706;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  --radius: 12px;
+  --input-border: #e8e6e3;
+  --input-bg: #ffffff;
+  --input-placeholder: #bfc6c9;
+  --focus-ring: rgba(217, 119, 6, 0.14);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+  font-size: 16px;
+}
+
+/* Base layout */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: linear-gradient(180deg, #fff, #fff9f3);
+  min-height: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header & Navigation */
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid #f3e9e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.nav a {
+  margin-left: 16px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.cart-link {
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 200ms ease, transform 150ms ease;
+}
+
+.btn-primary:hover {
+  background: #b8600d;
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fff;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn.buy {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+.btn.buy:hover {
+  background: #b8600d;
+}
+
+/* Form Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #111827;
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 120ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  resize: vertical;
+  line-height: 1.3;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 24px var(--focus-ring), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled],
+input[readonly],
+textarea[readonly] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #fbfbfb;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+textarea {
+  min-height: 110px;
+}
+
+@media (max-width: 720px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 28px;
+  padding: 16px 0;
+  color: var(--muted);
+  background: transparent;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Utility Classes */
+.muted {
+  color: var(--muted);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.06);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav a {
+    margin-left: 12px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 12px;
+  }
+}

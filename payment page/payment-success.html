@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment Result — MERCIFUL CRUNCHY</title>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/payment.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="../main/merciful.html">MERCIFUL CRUNCHY</a>
+      <nav class="nav">
+        <a href="../main/merciful.html">Shop</a>
+        <a href="../main/about.html">About Us</a>
+        <a href="../main/contact.html">Contact Us</a>
+        <a href="../main/cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:32px;">
+    <h1>Payment result</h1>
+    <p id="status">Verifying payment — please wait...</p>
+    <div id="details" style="margin-top:12px;"></div>
+    <p style="margin-top:18px;"><a href="../main/merciful.html">Return to shop</a> or <a href="../main/cart.html">View cart/orders</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Read ?reference=... and call /api/payments/verify
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const ref = params.get('reference') || params.get('trxref') || params.get('referenceId') || null;
+      const statusEl = document.getElementById('status');
+      const detailsEl = document.getElementById('details');
+      if (!ref) {
+        statusEl.textContent = 'No payment reference found in the URL.';
+        return;
+      }
+      try {
+        const res = await fetch(`/api/payments/verify?reference=${encodeURIComponent(ref)}`);
+        const json = await res.json();
+        if (!res.ok) {
+          statusEl.textContent = 'Verification failed: ' + (json.error || res.statusText);
+          detailsEl.textContent = JSON.stringify(json, null, 2);
+          return;
+        }
+        if (json.success) {
+          statusEl.textContent = 'Payment successful! Thank you for your order.';
+          detailsEl.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`;
+        } else {
+          statusEl.textContent = 'Payment not successful. Status: ' + (json.status || 'unknown');
+          detailsEl.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`;
+        }
+      } catch (err) {
+        statusEl.textContent = 'Network error verifying payment.';
+        detailsEl.textContent = err.toString();
+      }
+    })();
+  </script>
+</body>
+</html>

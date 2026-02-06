@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MERCIFUL CRUNCHY — Cart & Checkout</title>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/cart.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="merciful.html">MERCIFUL CRUNCHY</a>
+      <nav class="nav">
+        <a href="merciful.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-container">
+      <!-- Cart items inserted by script.js -->
+    </div>
+
+    <section id="checkout-section" class="checkout">
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <div class="grid-2">
+          <label>
+            Full name
+            <input type="text" id="cust-name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="cust-phone" required />
+          </label>
+        </div>
+        <label>
+          Delivery address
+          <input type="text" id="cust-address" required />
+        </label>
+        <label>
+          Email (optional)
+          <input type="email" id="cust-email" />
+        </label>
+
+        <div class="order-summary" id="order-summary" style="margin-top:12px"></div>
+
+        <fieldset style="margin-top:16px;padding:12px;border:1px solid #e5e7eb;border-radius:8px">
+          <legend style="padding:0 8px"><strong>Payment Method</strong></legend>
+          <label style="display:flex;align-items:center;margin-bottom:8px">
+            <input type="radio" name="paymentMethod" value="whatsapp_cash" checked style="margin-right:8px" />
+            <span><strong>Pay on Cash via WhatsApp</strong> (Tell us what you want to buy & arrange payment)</span>
+          </label>
+          <label style="display:flex;align-items:center">
+            <input type="radio" name="paymentMethod" value="whatsapp_online" style="margin-right:8px" />
+            <span><strong>Pay Now via WhatsApp</strong> (Direct payment confirmation)</span>
+          </label>
+        </fieldset>
+
+        <div class="form-actions" style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%">
+          <button type="submit" class="btn-primary" id="place-cash">Order via WhatsApp (Pay on Cash)</button>
+          <button type="button" class="btn buy" id="pay-now">Pay Now via WhatsApp</button>
+        </div>
+      </form>
+
+      <div id="order-result" style="margin-top:16px;padding:12px;border-radius:8px"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY</p>
+    </div>
+  </footer>
+
+  <script src="../script/merciful.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

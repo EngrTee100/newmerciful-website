@@ -1,0 +1,203 @@
+/* MERCIFUL CRUNCHY — Home/Shop Page Styles */
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 28px;
+  background: linear-gradient(90deg, #fff, #fff6ed);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hero h1 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 8px 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Products Section */
+.products {
+  margin-top: 28px;
+}
+
+.products h2 {
+  margin-top: 0;
+  color: #1f2937;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.product {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.product h3 {
+  margin: 10px 0 6px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.product p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.product .actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.product .actions .btn {
+  flex: 1;
+  min-width: 100px;
+}
+
+/* Quantity Selector */
+.qty-selector {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.qty-btn {
+  min-width: 32px;
+  padding: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.qty-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.qty-display {
+  min-width: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Info Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 48%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    flex-direction: column;
+  }
+
+  .gallery img {
+    width: 100%;
+  }
+}
