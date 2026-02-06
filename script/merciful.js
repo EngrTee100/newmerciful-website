@@ -6,7 +6,7 @@
   const ORDERS_KEY = 'mc_orders';
 
   // Edit this array to add new products
-  const defaultProducts = [
+    const defaultProducts = [
     {
       id: 'chinchin-01',
       name: 'Crunchy Chinchin (250g)',
@@ -33,63 +33,63 @@
       name: 'Plantain Chips (200g)',
       price: 1000,
       description: 'Crispy golden plantain chips — crunchy and addictive.',
-      image: 'images/plantain-chips.jpg'
+      image: '../images/plantain-chips.jpg'
     },
     {
       id: 'meat-pie-01',
       name: 'Meat Pie (single)',
       price: 600,
       description: 'Golden pastry filled with savory spiced meat.',
-      image: 'images/meat-pie.jpg'
+      image: '../images/meat-pie.jpg'
     },
     {
       id: 'samosa-01',
       name: 'Samosa (3 pcs)',
       price: 700,
       description: 'Crispy triangular pastries with spicy meat filling.',
-      image: 'images/samosa.jpg'
+      image: '../images/samosa.jpg'
     },
     {
       id: 'spring-rolls-01',
       name: 'Spring Rolls (4 pcs)',
       price: 800,
       description: 'Crispy spring rolls with vegetables and meat filling.',
-      image: 'images/spring-rolls.jpg'
+      image: '../images/spring-rolls.jpg'
     },
     {
       id: 'akara-01',
       name: 'Akara Balls (6 pcs)',
       price: 400,
       description: 'Fluffy fried bean balls, traditional Nigerian favorite.',
-      image: 'images/akara-balls.jpg'
+      image: '../images/akara-balls.jpg'
     },
     {
       id: 'coconut-balls-01',
       name: 'Coconut Balls (5 pcs)',
       price: 500,
       description: 'Sweet coconut balls coated with sugar.',
-      image: 'images/coconut-balls.jpg'
+      image: '../images/coconut-balls.jpg'
     },
     {
       id: 'chin-chin-regular-01',
       name: 'Regular Chin Chin (300g)',
       price: 1200,
       description: 'Classic crunchy chin chin, lightly salted.',
-      image: 'images/chin-chin-regular.jpg'
+      image: '../images/chin-chin-regular.jpg'
     },
     {
       id: 'fish-roll-01',
       name: 'Fish Roll (single)',
       price: 650,
       description: 'Crispy pastry filled with seasoned fish and vegetables.',
-      image: 'images/fish-roll.jpg'
+      image: '../images/fish-roll.jpg'
     },
     {
       id: 'donut-01',
       name: 'Glazed Donuts (3 pcs)',
       price: 900,
       description: 'Soft fluffy donuts with sweet glaze coating.',
-      image: 'images/donuts.jpg'
+      image: '../images/donuts.jpg'
     }
   ];
 
@@ -505,3 +505,4 @@
     renderCartPage();
   });
 })();
+
