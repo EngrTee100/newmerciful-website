@@ -1,18 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Merciful Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MERCIFUL CRUNCHY — Home</title>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/home.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Brand</a></li>
-            <li><a href="index.html">Shop</a></li>
-        </ul>
-    </nav>
-    <h1>Welcome to the New Merciful Website</h1>
-    <p>Content goes here...</p>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="index.html">MERCIFUL CRUNCHY</a>
+      <nav class="nav">
+        <a href="index.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Crunchy Chinchin & Savory Peanut Burger</h1>
+        <p>Freshly made snacks — handcrafted, crunchy, and delicious. Order now for pickup or delivery.</p>
+        <a class="btn-primary" href="#products">Shop Now</a>
+      </div>
+      <figure aria-hidden="true" class="hero-media">
+        <!-- Animated video hero -->
+        <video 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          poster="../images/general snacks.jpeg"
+          style="width:100%;height:auto;border-radius:8px;object-fit:cover">
+          <source src="../videos/hero-animation.mp4" type="video/mp4">
+          <source src="../videos/hero-animation.webm" type="video/webm">
+          <!-- Fallback image -->
+          <img src="../images/general snacks.jpeg" alt="Crunchy chinchin and peanut burger snacks" style="width:100%;height:auto;border-radius:8px;object-fit:cover" />
+        </video>
+      </figure>
+    </section>
+
+    <section id="products" class="products">
+      <h2>Our Specials</h2>
+      <div class="product-grid" id="product-grid">
+        <!-- Products are inserted by script.js -->
+      </div>
+    </section>
+
+    <section class="info-cards">
+      <article>
+        <h3>How to Order</h3>
+        <ol>
+          <li>Add items to your cart.</li>
+          <li>Open Cart, fill contact & delivery details.</li>
+          <li>Place your order — you'll get a confirmation number.</li>
+        </ol>
+      </article>
+      <article>
+        <h3>Why MERCIFUL CRUNCHY?</h3>
+        <p>Traditional recipes, high-quality peanuts, and small-batch frying for the perfect crunch.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
+      <p>Follow us on social or contact <a href="contact.html">here</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../script/merciful.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
